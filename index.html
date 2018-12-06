@@ -8,23 +8,31 @@
     <script type="text/paperscript" canvas="myCanvas">
         
         var circles = [];
+        
         var sound = new Howl({
-            urls: ['sounds/bubbles.mp3']
-        }).play();
+            src: ['sounds/bubbles.mp3']
+        });
         
         function onKeyDown(event) {
-            var maxPoint = new Point(view.size.width, view.size.height);
-            var randomPoint = Point.random();
-            var point = maxPoint * randomPoint;
-            var newCircle = new Path.Circle(point, 500);
-            newCircle.fillColor = "pink";
-            circles.push(newCircle);
+            if(keyData[event.key]){
+                var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var point = maxPoint * randomPoint;
+                var newCircle = new Path.Circle(point, 500);
+                newCircle.fillColor = keyData[event.key].color;
+                keyData[event.key].sound.play();
+                circles.push(newCircle);
+            }
         }
         
         function onFrame(event) {
             for (var i = 0; i < circles.length; i++) {
                 circles[i].fillColor.hue++;
                 circles[i].scale(.85);
+                if(circles[i].area < 1) {
+                    circles[i].remove();
+                    circles.splice(i, 1);
+                }
             }
         }
     </script>
