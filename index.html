@@ -4,9 +4,29 @@
     <title>Patatap Clone</title>
     <link rel="stylesheet" type="text/css" href="patatapClone.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        
+        var circles = [];
+        
+        function onKeyDown(event) {
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+            var newCircle = new Path.Circle(point, 500);
+            newCircle.fillColor = "pink";
+            circles.push(newCircle);
+        }
+        
+        function onFrame(event) {
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].fillColor.hue++;
+                circles[i].scale(.85);
+            }
+        }
+    </script>
 </head>
 <body>
-    
+    <canvas id="myCanvas" resize></canvas>
     <script type="text/javascript" src="patatapClone.js"></script>
 </body>
 </html>
