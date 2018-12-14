@@ -7,8 +7,8 @@
 
 ## General info
 This project is a browser sound player.  
+Press the keys to compose a music.
 
-	
 ## Technologies
 Project is created with:
 * HTML5
@@ -24,7 +24,7 @@ Recommended minimal browser versions:
 * Opera 55
 
 ## Setup
-
+To run this project, open this in a new tab: https://kpilszak.github.io/patatap-clone/
 
 ## Sources
 This project is inspired by Colt Steele course "The Web Developer Bootcamp" from Udemy.
