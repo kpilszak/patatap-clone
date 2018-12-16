@@ -13,7 +13,7 @@ Press the keys to compose a music.
 Project is created with:
 * HTML5
 * CSS3
-* JavaScript ES6 (Paper.js, Howler.js)
+* JavaScript (Paper.js, Howler.js)
 
 ## Supports
 Recommended minimal browser versions:
