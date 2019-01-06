@@ -3,7 +3,9 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Supports](#supports)
 * [Setup](#setup)
+* [Sources](#sources)
 
 ## General info
 This project is a browser sound player.  
